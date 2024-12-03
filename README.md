@@ -1,1 +1,1 @@
-# codeOfAdvent2024
+# adventOfCode2024
