@@ -1,6 +1,12 @@
 import { parseLists } from './parseLists.ts'
 
-const text = await Deno.readTextFile('input.txt')
+// Get the directory where the current script is located
+const currentDir = new URL('.', import.meta.url).pathname
+
+// Construct the path to the input.txt file relative to the script's directory
+const filePath = currentDir + 'input.txt'
+
+const text = await Deno.readTextFile(filePath)
 
 const [leftList, rightList] = parseLists(text)
 
