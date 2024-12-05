@@ -1,18 +1,28 @@
-import { parseLists } from './parseLists.ts'
+function parseLists(input: string) {
+  const rows = input.trimEnd().split('\n')
 
-// Get the directory where the current script is located
-const currentDir = new URL('.', import.meta.url).pathname
+  const leftList: number[] = []
+  const rightList: number[] = []
 
-// Construct the path to the input.txt file relative to the script's directory
-const filePath = currentDir + 'input.txt'
+  rows.forEach((row) => {
+    const [leftId, rightId] = row.split('   ')
+    leftList.push(Number(leftId))
+    rightList.push(Number(rightId))
+  })
 
+  return [leftList, rightList]
+}
+
+const filePath = new URL('.', import.meta.url).pathname + 'input.txt'
 const text = await Deno.readTextFile(filePath)
+
+/*** PART ONE ***/
 
 const [leftList, rightList] = parseLists(text)
 
 function getSum() {
-  const sortedLeftList = leftList.sort((a, z) => a - z)
-  const sortedRightList = rightList.sort((a, z) => a - z)
+  const sortedLeftList = leftList.toSorted((a, z) => a - z)
+  const sortedRightList = rightList.toSorted((a, z) => a - z)
 
   const distances = sortedLeftList.map((leftId, i) => {
     const rightId = sortedRightList[i]
@@ -26,8 +36,10 @@ function getSum() {
   return sumOfDistances
 }
 
+/*** PART TWO ***/
+
 function getSimilarity() {
-  const sortedLeftList = leftList.sort((a, z) => a - z)
+  const sortedLeftList = leftList.toSorted((a, z) => a - z)
 
   const uniqueLeftIds = new Map<number, number>()
   sortedLeftList.forEach((id) => uniqueLeftIds.set(id, 0))
@@ -40,7 +52,7 @@ function getSimilarity() {
   })
 
   const similarity = Array.from(uniqueLeftIds).reduce(
-    (acc, [id, occurance]) => (acc = acc + id * occurance),
+    (acc, [id, occurrence]) => (acc = acc + id * occurrence),
     0,
   )
 

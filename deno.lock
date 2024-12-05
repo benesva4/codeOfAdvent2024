@@ -4,7 +4,9 @@
     "jsr:@std/assert@1": "1.0.8",
     "jsr:@std/fs@^1.0.6": "1.0.6",
     "jsr:@std/internal@^1.0.5": "1.0.5",
-    "jsr:@std/path@^1.0.8": "1.0.8"
+    "jsr:@std/path@^1.0.8": "1.0.8",
+    "npm:lodash.isequal@*": "4.5.0",
+    "npm:lodash@*": "4.17.21"
   },
   "jsr": {
     "@std/assert@1.0.8": {
@@ -24,6 +26,14 @@
     },
     "@std/path@1.0.8": {
       "integrity": "548fa456bb6a04d3c1a1e7477986b6cffbce95102d0bb447c67c4ee70e0364be"
+    }
+  },
+  "npm": {
+    "lodash.isequal@4.5.0": {
+      "integrity": "sha512-pDo3lu8Jhfjqls6GkMgpahsF9kCyayhgykjyLMNFTKWrpVdAQtYyB4muAMWozBB4ig/dtWAmsMxLEI8wuz+DYQ=="
+    },
+    "lodash@4.17.21": {
+      "integrity": "sha512-v2kDEe57lecTulaDIuNTPy3Ry4gLGJ6Z1O3vE1krgXZNrsQ+LFTGHVxVjcXPs17LhbZVGedAJv8XZ1tvj5FvSg=="
     }
   },
   "workspace": {

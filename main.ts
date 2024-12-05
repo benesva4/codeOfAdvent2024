@@ -11,10 +11,16 @@ async function runFile(prefix: string) {
     const command = new Deno.Command('deno', {
       args: ['run', '--allow-read', targetFile],
       stdout: 'piped',
+      stderr: 'piped',
     })
 
-    const { stdout } = await command.outputSync()
-    console.log(new TextDecoder().decode(stdout))
+    const { stdout, stderr } = await command.outputSync()
+    if (stdout) {
+      console.log(new TextDecoder().decode(stdout))
+    }
+    if (stderr) {
+      console.log(new TextDecoder().decode(stderr))
+    }
   } else {
     console.log(`No file found with prefix "${prefix}"`)
   }
