@@ -5,7 +5,10 @@
     "jsr:@std/fs@^1.0.6": "1.0.6",
     "jsr:@std/internal@^1.0.5": "1.0.5",
     "jsr:@std/path@^1.0.8": "1.0.8",
+    "npm:@types/lodash.zip@*": "4.2.9",
+    "npm:@types/lodash@*": "4.17.13",
     "npm:lodash.isequal@*": "4.5.0",
+    "npm:lodash.zip@*": "4.2.0",
     "npm:lodash@*": "4.17.21"
   },
   "jsr": {
@@ -29,8 +32,20 @@
     }
   },
   "npm": {
+    "@types/lodash.zip@4.2.9": {
+      "integrity": "sha512-cJvqtEzLgHUPF6H6v7K6Q/yIc1DAYpsUkHD1Q7bUOAcCE0b7drzoUMi/Toj0MjQI3WeM6rI6v295mkenAQ+R7A==",
+      "dependencies": [
+        "@types/lodash"
+      ]
+    },
+    "@types/lodash@4.17.13": {
+      "integrity": "sha512-lfx+dftrEZcdBPczf9d0Qv0x+j/rfNCMuC6OcfXmO8gkfeNAY88PgKUbvG56whcN23gc27yenwF6oJZXGFpYxg=="
+    },
     "lodash.isequal@4.5.0": {
       "integrity": "sha512-pDo3lu8Jhfjqls6GkMgpahsF9kCyayhgykjyLMNFTKWrpVdAQtYyB4muAMWozBB4ig/dtWAmsMxLEI8wuz+DYQ=="
+    },
+    "lodash.zip@4.2.0": {
+      "integrity": "sha512-C7IOaBBK/0gMORRBd8OETNx3kmOkgIWIPvyDpZSCTwUrpYmgZwJkjZeOD8ww4xbOUOs4/attY+pciKvadNfFbg=="
     },
     "lodash@4.17.21": {
       "integrity": "sha512-v2kDEe57lecTulaDIuNTPy3Ry4gLGJ6Z1O3vE1krgXZNrsQ+LFTGHVxVjcXPs17LhbZVGedAJv8XZ1tvj5FvSg=="

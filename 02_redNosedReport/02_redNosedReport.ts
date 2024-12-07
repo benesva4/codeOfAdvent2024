@@ -1,3 +1,4 @@
+// @ts-types="npm:@types/lodash.isequal"
 import isEqual from 'npm:lodash.isequal'
 
 const filePath = new URL('.', import.meta.url).pathname + 'input.txt'
